@@ -16,7 +16,7 @@ const router = createRouter({
       children: [
         {
           path: 'experience/:exp',
-          component: () => import('../views/ExperienceView.vue'),
+          component: () => import('../views/ExperienceDetailView.vue'),
         },
       ],
     },

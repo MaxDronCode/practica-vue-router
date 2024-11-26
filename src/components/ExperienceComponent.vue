@@ -5,7 +5,6 @@ const props = defineProps({
   index: Number,
   id: Number,
 })
-console.log(props.i)
 </script>
 <template>
   <h3>{{ data.destinations[props.id - 1].experiences[props.index].name }}</h3>

@@ -1,14 +1,16 @@
 <script setup>
 import data from '/data.json'
 import { RouterLink, RouterView } from 'vue-router'
-console.log(data)
-const url = "../country/"
+const url = '../country/'
+// import '/public/main.css'
 </script>
 
 <template>
   <nav id="nav">
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink v-for="(country, i) in data.destinations" :to="url + country.id" :key="i">{{ country.name }}</RouterLink>
+    <RouterLink v-for="(country, i) in data.destinations" :to="url + country.id" :key="i">{{
+      country.name
+    }}</RouterLink>
   </nav>
   <div class="container">
     <RouterView />
@@ -16,14 +18,14 @@ const url = "../country/"
 </template>
 
 <style scoped>
-nav{
+nav {
   background-color: rgb(42, 42, 88);
   color: #fff;
   height: 80px;
   display: flex;
   align-items: center;
 }
-a{
+a {
   color: #fff;
   text-decoration: none;
   padding: 10px;

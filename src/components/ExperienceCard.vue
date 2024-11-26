@@ -1,10 +1,18 @@
 <script setup>
 import data from '/data.json'
 import ExperienceComponent from '@/components/ExperienceComponent.vue'
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
+
 const experienceIndex = ref(0)
+const emit = defineEmits(['sendExpIndex'])
+
+const sendExpIndex = () => {
+  emit('sendExpIndex', experienceIndex.value)
+}
+
 const handleClickExperience = (value) => {
   experienceIndex.value = value
+  sendExpIndex()
 }
 </script>
 <template>
