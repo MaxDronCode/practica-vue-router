@@ -1,15 +1,18 @@
 <script setup>
 import ExperienceCard from '@/components/ExperienceCard.vue'
-import { RouterView, RouterLink } from 'vue-router'
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 const expIndex = ref(0)
+
+const emit = defineEmits(['sendIndex'])
+const sendIndex = () => {
+  emit('sendIndex', expIndex.value)
+}
 const recieveIndex = (index) => {
   expIndex.value = index
+  sendIndex()
 }
 </script>
 <template>
   <ExperienceCard @sendExpIndex="recieveIndex" />
-  <RouterLink :to="'/' + expIndex">Ruta</RouterLink>
-  <RouterView />
 </template>
 <style scoped></style>

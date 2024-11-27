@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import CountryView from '@/views/CountryView.vue'
+import ExperienceDetailView from '@/views/ExperienceDetailView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,11 +14,12 @@ const router = createRouter({
     {
       path: '/country/:id',
       name: 'country',
-      component: () => import('../views/CountryView.vue'),
+      component: CountryView,
       children: [
         {
           path: 'experience/:exp',
-          component: () => import('../views/ExperienceDetailView.vue'),
+          name: 'experience',
+          component: ExperienceDetailView,
         },
       ],
     },
